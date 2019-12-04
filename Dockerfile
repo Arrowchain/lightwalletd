@@ -19,8 +19,8 @@ RUN wget -q --no-check-certificate https://dl.google.com/go/go1.13.4.linux-amd64
 RUN tar -xf go1.13.4.linux-amd64.tar.gz
 RUN mv go /usr/local
 
-RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Arrowchain/CN=arrowchain.net" \
-  -addext "subjectAltName=DNS:arrowchain.net" \
+RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Arrowchain/CN=wallet.arrowchain.net" \
+  -addext "subjectAltName=DNS:wallet.arrowchain.net" \
   -newkey rsa:4096 \
   -keyout /etc/ssl/private/nginx-selfsigned.key \
   -out /etc/ssl/certs/nginx-selfsigned.crt
